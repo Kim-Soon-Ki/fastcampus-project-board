@@ -18,7 +18,7 @@ public interface ArticleCommentRepository extends
         QuerydslPredicateExecutor<ArticleComment>,
         QuerydslBinderCustomizer<QArticleComment> {
 
-    List<ArticleComment> findByArticle_id(Long articleId);
+    List<ArticleComment> findByArticle_Id(Long articleId);
 
     @Override
     default void customize(QuerydslBindings bindings, QArticleComment root) {
@@ -28,4 +28,5 @@ public interface ArticleCommentRepository extends
         bindings.bind(root.createdAt).first(DateTimeExpression::eq);
         bindings.bind(root.createdBy).first(StringExpression::containsIgnoreCase);
     }
+
 }
