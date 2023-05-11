@@ -2,7 +2,6 @@ package com.fastcampus.projectboard.dto.response;
 
 import com.fastcampus.projectboard.dto.ArticleCommentDto;
 import com.fastcampus.projectboard.dto.ArticleWithCommentsDto;
-import com.fastcampus.projectboard.dto.HashtagDto;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -38,7 +37,7 @@ public record ArticleWithCommentsResponse(
                 dto.createdAt(),
                 dto.userAccountDto().email(),
                 nickname,
-                dto.userAccountDto().userId(),
+                dto.userAccountDto().userId()
         );
     }
 }
